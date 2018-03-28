@@ -15,6 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: "jacoco"
+//apply plugin: 'checkstyle'
 
 group = 'com.sorin'
 version = '0.0.1-SNAPSHOT'
@@ -30,13 +31,13 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-jacocoTestCoverageVerification {
-violationRules {
-rule {
-limit {
-minimum = 0.2
-}
-}
-}
-}
+//jacocoTestCoverageVerification {
+//violationRules {
+//rule {
+//limit {
+//minimum = 0.2
+//}
+//}
+//}
+//}
 
