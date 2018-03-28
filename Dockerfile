@@ -1,4 +1,4 @@
 FROM frolvlad/alpine-oraclejdk8:slim
-COPY build/libs/calculator-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/pipa1-0.0.1-SNAPSHOT.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
