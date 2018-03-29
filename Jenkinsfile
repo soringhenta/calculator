@@ -27,7 +27,7 @@ sh "docker run -d --rm -p 8080:8080 --name calculator leszko/calculator"
 
 stage("Acceptance test") {
 steps {
-sh "./acceptance_test.sh"
+bash "./acceptance_test.sh"
 }
 }
 
