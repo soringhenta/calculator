@@ -12,6 +12,11 @@ done
 
 r=$(curl -s 'http://localhost:8080/sum?a=3&b=2' 2>/dev/null)
 
-(( ${r:-"a"} == 5 )) || {
-echo 'UAT test failed!!!' && exit 1
-}
+if (( ${r:-"a"} == 5 ))
+then
+  echo 'UAT test PASSED!!!'
+  exit 0
+else
+  echo 'UAT test failed!!!'
+  exit 1
+fi
