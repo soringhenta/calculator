@@ -10,7 +10,6 @@ exit 1
 }
 done
 EOF
-sleep 60
 #test $(curl localhost:8080/sum?a=1\&b=2) -eq 3
-(( $(curl -s 'http://localhost:8080/sum?a=1&b=2' 2>/dev/null) == 3 ))
+(( $(curl -s 'http://localhost:8080/sum?a=3&b=2' 2>/dev/null) == 3 ))
 
