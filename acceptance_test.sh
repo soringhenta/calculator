@@ -1,7 +1,7 @@
 #!/bin/bash
 count=1
 
-while curl -s 'http://localhost:8080/sum?a=3&b=2' 2>/dev/null|grep -vqE '^[0-9]+$'
+while ! curl -s 'http://localhost:8080/sum?a=3&b=2' 2>/dev/null|grep -qE '^[0-9]+$'
 do
 sleep 1
 ((count++ > 60)) && {
@@ -10,6 +10,6 @@ exit 1
 }
 done
 
-#test $(curl localhost:8080/sum?a=1\&b=2) -eq 3
-(( $(curl -s 'http://localhost:8080/sum?a=3&b=2' 2>/dev/null) == 3 ))
-
+r=$(curl -s 'http://localhost:8080/sum?a=3&b=2' 2>/dev/null)
+${r:=a}
+(( r == 3 ))
