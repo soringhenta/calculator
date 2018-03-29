@@ -9,5 +9,6 @@ exit 1
 }
 done
 
-test $(curl localhost:8080/sum?a=1\&b=2) -eq 3
+#test $(curl localhost:8080/sum?a=1\&b=2) -eq 3
+(($(curl localhost:8080/sum?a=1\&b=2) == 3))
 
