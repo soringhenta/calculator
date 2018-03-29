@@ -28,7 +28,15 @@ sh "docker run -d --rm -p 8080:8080 --name calculator leszko/calculator"
 stage("Acceptance test") {
 steps {
 sh "./acceptance_test.sh"
+  
 }
+  
+post {
+always {
+sh "docker stop calculator"
+}
+}
+  
 }
 
 
@@ -36,8 +44,4 @@ sh "./acceptance_test.sh"
  } 
 }
 
-post {
-always {
-sh "docker stop calculator"
-}
-}
+
